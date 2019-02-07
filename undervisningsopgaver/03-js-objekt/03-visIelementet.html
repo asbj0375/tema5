@@ -10,10 +10,10 @@
 <body>
     <div id="dyr">
         <h2></h2>
-
+        <img src="" alt="">
         <p>Type:</p>
         <p>Levested:</p>
-        <img src="" alt="">
+
     </div>
 
 
@@ -31,8 +31,8 @@
         let destination = document.querySelector("#dyr");
 
         destination.querySelector("h2").textContent = dyr.Dyr;
-        destination.querySelector("p").textContent = dyr.Type;
-        destination.querySelector("p").textContent = dyr.Levested;
+        destination.querySelector("p").textContent += dyr.Type;
+        destination.querySelector("p + p").textContent += dyr.Levested;
         destination.querySelector("img").src = dyr.Billede;
 
 
