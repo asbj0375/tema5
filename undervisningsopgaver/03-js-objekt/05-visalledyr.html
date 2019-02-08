@@ -78,9 +78,13 @@
 
         function start() {
             let dest = document.querySelector("#liste");
-            alleDyr.forEach(dyr => {
-                dest.innerHTML += `<div class="minedyr"> <h3>${dyr.navn}</h3> <p>${dyr.type} fra ${dyr.levested} </p> <img src=${dyr.billede} alt=${dyr.navn}> </div>`;
-            })
+
+            function visDyr() {
+                alleDyr.forEach(dyr => {
+                    dest.innerHTML += `<div class="minedyr"> <h3>${dyr.navn}</h3> <p>${dyr.type} fra ${dyr.levested} </p> <img src=${dyr.billede} alt=${dyr.navn}> </div>`;
+                })
+            }
+            visDyr();
         }
     </script>
 </body>
