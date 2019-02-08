@@ -31,11 +31,14 @@
                 text-align: center;
             }
         }
+
     </style>
 </head>
 
 <body>
     <div id="liste">
+
+        <a href=""></a>
 
     </div>
 
@@ -47,7 +50,7 @@
         //Hent JSON fil i en asykron function
         async function start() {
             //henter data filen
-            const myJson = await fetch("dyr.json");
+            const myJson = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1eBNqPb_SgxmA2kVMKTKGLCg5qyrGd0HoXPzaYXe7qJA");
             //den hentede data skal tolkes som json
             alleDyr = await myJson.json();
             //kald funktion der viser data i DOM
@@ -67,6 +70,7 @@
             })
 
         }
+
     </script>
 </body>
 
