@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+
+
+    <style>
+        .Personramme {
+            border: 1px solid white;
+            padding: 1rem;
+            background-color: green;
+            color: white;
+        }
+
+        body {
+            background-color: rgba(8, 124, 12, 0.38);
+        }
+
+        #liste {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            margin: 1rem;
+            grid-gap: 2rem;
+
+
+        }
+
+        .menu {
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        @media only screen and (min-width:600px) {
+            #liste {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media only screen and (min-width:768px) {
+            #liste {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .valgt {
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="menu">
+        <button class="filter valgt" data-hold="alle">Alle</button>
+        <button class="filter" data-hold="a">Hold A</button>
+        <button class="filter" data-hold="b">Hold B</button>
+    </div>
+
+
+    <div id="liste">
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        let allePersoner = [];
+        let filter = "alle";
+        const dest = document.querySelector("#liste");
+
+        async function start() {
+            const myJson = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1OLlD_GRoz71piHvnW306omRAyHS7vtLOILQt-K0YF_c");
+            allePersoner = await myJson.json();
+            visPersoner();
+        }
+
+        function visPersoner() {
+            dest.innerHTML = "";
+            allePersoner.forEach(person => {
+                if (filter == "alle" || filter == person.hold) {
+                    dest.innerHTML += `<div class="Personramme"> <h2>${person.navn}</h2> <img src=${person.billede} alt=${person.navn}><br> <a href="https://github.com/${person.github}">${person.github} </a>
+                    <p> Hold: ${person.hold} </p>
+                    <p> Alder: ${person.alder} </p>
+        </div>`;
+                }
+            })
+        }
+
+
+        document.querySelectorAll(".filter").forEach(elm => {
+            elm.addEventListener("click", filtrering);
+        })
+
+
+
+        function filtrering() {
+            filter = this.getAttribute("data-hold");
+            visPersoner();
+        }
+        start();
+    </script>
+</body>
+
+</html>
