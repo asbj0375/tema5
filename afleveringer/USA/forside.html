@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSTACHE BILL'S DINER</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .baggrund_forside {
+            margin: 0;
+            background-image: url(imgs/splash.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 48vw;
+
+        }
+
+        @media screen and (max-width:680px) {
+
+            .baggrund_forside {
+                margin: 0;
+                background-image: url(imgs/splash.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 70%;
+                background-attachment: fixed;
+            }
+
+
+        }
+
+        @media screen and (max-width:574px) {
+
+            .baggrund_forside {
+                margin: 0;
+                background-image: url(imgs/splash.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 70%;
+                background-attachment: fixed;
+            }
+        }
+
+
+        img {
+            width: 100%;
+        }
+
+
+        #topmenu {
+            list-style-type: none;
+            transition: transform 1s;
+            position: absolute;
+            left: 0;
+            background-color: #F4B703;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            top: -4vw;
+            font-weight: bold;
+            background-size: cover;
+        }
+
+        #topmenu a {
+            font-size: 1.3rem;
+            color: black;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        #topmenu a:hover {
+            font-size: 1.6rem;
+            font-weight: bolder;
+        }
+
+        #topmenu li {
+            padding: 2.25rem;
+            text-align: center;
+        }
+
+        .hidden {
+            transform: translateY(-180%);
+            /*    display: none;*/
+
+        }
+
+        #menuknap {
+            display: inline-block;
+            color: white;
+            font-size: 2.5rem;
+            padding: 1.5rem;
+            cursor: pointer;
+            z-index: 2;
+            position: absolute;
+
+        }
+
+        .topnav {
+            list-style-type: none;
+            transition: transform 1s;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            text-align: center;
+            padding: 0.75rem;
+            margin-top: 4rem;
+            margin-left: 3rem;
+            background-color: rgba(0, 0, 0, 0.47);
+
+
+
+
+        }
+
+        .topnav a {
+            font-size: 1.3rem;
+            text-decoration: none;
+            color: #ff8500;
+            text-transform: uppercase;
+            padding: 0.75rem;
+            margin-top: 0.75rem;
+            font-weight: bolder;
+        }
+
+        .topnav a:hover {
+            font-size: 1.6rem;
+        }
+
+
+        @media screen and (min-width:680px) {
+
+            .burgermenu {
+                display: none;
+            }
+
+
+        }
+
+        @media screen and (max-width:680px) {
+
+            .topnav {
+                display: none;
+            }
+
+        }
+
+
+
+        .logo {
+            background-image: url(imgs/123.svg);
+            height: 30vw;
+            width: 30vw;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 2vw;
+            left: 1vw;
+            background-size: 100%;
+            z-index: 1;
+
+
+        }
+
+
+        .lille_logo {
+            width: 25vw;
+            height: 25vw;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        @media screen and (max-width:680px) {
+
+            .logo {
+                background-image: url(imgs/1234.svg);
+                height: 30vw;
+                width: 30vw;
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 2vw;
+                left: 40vw;
+                background-size: 100%;
+                z-index: 1;
+
+            }
+
+            .tekst {
+                background-image: url(imgs/SVG/juicy.svg);
+                height: 100vw;
+                width: 100vw;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 90vw;
+                left: 3vw;
+                z-index: 3;
+            }
+        }
+
+
+
+
+
+
+        /*
+        footer {
+            background-color: #EECCDD;
+            color: #707070;
+
+            height: 2rem;
+        }
+*/
+
+
+
+        /*
+            .index_footer {
+
+            }
+*/
+
+
+
+        #splash {
+            max-width: none;
+            padding: inherit;
+        }
+    </style>
+</head>
+
+
+<body class="baggrund_forside">
+    <nav>
+        <div class="logo"></div>
+
+
+
+        <div class="burgermenu">
+            <div id="menuknap">☰</div>
+            <ul id="topmenu" class="hidden">
+                <li> <img class="lille_logo" src="imgs/1234.svg" alt="mindre logo"></li>
+                <li><a href="forside.html">Forside</a></li>
+                <li><a href="menu.html">menu</a></li>
+                <li><a href="omos.html">Om os</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+
+
+            </ul>
+        </div>
+
+        <div class="topnav">
+            <a href="forside.html">Forside</a>
+            <a href="menu.html">Menu</a>
+            <a href="omos.html">Om os</a>
+            <a href="kontakt.html">Kontakt</a>
+
+        </div>
+
+
+
+    </nav>
+
+
+    <footer class="tekst"> </footer>
+
+
+    <script>
+        window.addEventListener("load", sidenVises);
+
+        function sidenVises() {
+            console.log("siden vises");
+            //klik på topmenu-knap
+            document.querySelector("#menuknap").addEventListener("click", toggletopmenu);
+        }
+
+        function toggletopmenu() {
+            console.log("toggle topmenu");
+            document.querySelector("#topmenu").classList.toggle("hidden");
+
+
+            let erSkjult = document.querySelector("#topmenu").classList.contains("hidden");
+
+            if (erSkjult == true) {
+                //        topmenuen er nu skjult - ændre den til☰
+                document.querySelector("#menuknap").textContent = "☰";
+            } else {
+                //        topmenuen er vist - ændre topmenuknap til ×
+                document.querySelector("#menuknap").textContent = " × "
+
+            }
+        }
+    </script>
+</body>
+
+</html>

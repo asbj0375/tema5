@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSTACHE BILL'S DINER</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            /*
+            background-image: url(imgs/splash.jpg);
+            background-repeat: no-repeat;
+*/
+        }
+
+        img {
+            width: 20rem;
+
+        }
+
+
+        #topmenu {
+
+
+            list-style-type: none;
+            transition: transform 1s;
+            position: absolute;
+            left: 0;
+            background-color: rgba(238, 204, 221, 0.92);
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            top: -1rem;
+            text-decoration: underline;
+
+
+
+        }
+
+        #topmenu a {
+
+            font-size: 1.3rem;
+
+            color: black;
+            text-transform: uppercase;
+            color: white;
+
+
+
+        }
+
+        #topmenu a:hover {
+            font-size: 1.6rem;
+            font-weight: bolder;
+        }
+
+        #topmenu li {
+            padding: 2.25rem;
+            text-align: center;
+
+        }
+
+        .hidden {
+            transform: translateX(-150%);
+            /*    display: none;*/
+
+        }
+
+        #menuknap {
+            display: inline-block;
+            color: black;
+            font-size: 2rem;
+            padding: 1.5rem;
+            cursor: pointer;
+            z-index: 2;
+            position: absolute;
+            margin-top: -6rem;
+        }
+
+        .topnav {
+            list-style-type: none;
+            transition: transform 1s;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            text-align: center;
+            padding: 0.75rem;
+            margin-top: 2rem;
+
+
+
+
+        }
+
+        .topnav a {
+            font-size: 1.3rem;
+            text-decoration: none;
+            color: black;
+            text-transform: uppercase;
+            padding: 0.75rem;
+            margin-top: 0.75rem;
+            font-weight: bolder;
+        }
+
+        .topnav a:hover {
+            font-size: 1.6rem;
+        }
+
+
+        @media screen and (min-width:680px) {
+
+            .burgermenu {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:680px) {
+
+            .topnav {
+                display: none;
+            }
+
+            .logo {
+                text-align: center;
+            }
+        }
+
+
+        .logo {
+            background-image: url(imgs/123.svg);
+            height: 100px;
+
+        }
+
+/*
+footer {
+background-color: #EECCDD;
+color: #707070;
+height: 3rem;
+
+}
+
+
+
+
+.index_footer {
+position: absolute;
+
+width: 100vw;
+}
+*/
+
+
+        #omos {
+            display: flex;
+
+            flex-wrap: wrap;
+            margin-top: 5em;
+            margin-left: 8rem;
+
+
+
+        }
+
+        .column {
+            flex-basis: 350px;
+            flex-direction: column;
+            flex-grow: 1;
+
+
+        }
+
+        .column p {
+            margin-left: -8rem;
+            width: 35rem;
+        }
+
+
+        .column img {
+            margin-left: 8rem:
+        }
+
+        .logo {
+            background-image: url(imgs/123.svg);
+            height: 20vw;
+            width: 20vw;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: -1vw;
+            left: 0vw;
+            background-size: 100%;
+            z-index: 1;
+
+
+        }
+
+        @media screen and (max-width:680px) {
+
+            .logo {
+                left: 44vw
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="logo"></div>
+
+
+    <nav>
+        <div class="burgermenu">
+            <div id="menuknap">☰</div>
+            <ul id="topmenu" class="hidden">
+                <li><a href="forside.html">Forside</a></li>
+                <li><a href="menu.html">menu</a></li>
+                <li><a href="omos.html">Om os</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+
+            </ul>
+        </div>
+
+        <div class="topnav">
+            <a href="forside.html">Forside</a>
+            <a href="menu.html">Menu</a>
+            <a href="omos.html">Om os</a>
+            <a href="kontakt.html">Kontakt</a>
+
+        </div>
+
+
+
+    </nav>
+
+
+    <section id="omos">
+
+        <div class="column">
+
+            <img src="imgs/omosbillede.jpg" alt="">
+        </div>
+        <div class="column">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
+        </div>
+
+    </section>
+
+
+
+    <footer class="index_footer"></footer>
+
+
+    <script>
+        window.addEventListener("load", sidenVises);
+
+        function sidenVises() {
+            console.log("siden vises");
+            //klik på topmenu-knap
+            document.querySelector("#menuknap").addEventListener("click", toggletopmenu);
+        }
+
+        function toggletopmenu() {
+            console.log("toggle topmenu");
+            document.querySelector("#topmenu").classList.toggle("hidden");
+
+
+            let erSkjult = document.querySelector("#topmenu").classList.contains("hidden");
+
+            if (erSkjult == true) {
+                //        topmenuen er nu skjult - ændre den til☰
+                document.querySelector("#menuknap").textContent = "☰";
+            } else {
+                //        topmenuen er vist - ændre topmenuknap til ×
+                document.querySelector("#menuknap").textContent = " × "
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
